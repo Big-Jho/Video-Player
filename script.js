@@ -52,9 +52,7 @@ const displayTimestamp = () => {
 
   if (video.currentTime === video.duration) {
     video.currentTime = 0;
-    video.pause();
-    playIcon.classList.remove("fa-pause");
-    playIcon.classList.add("fa-play");
+    stopVideo();
   }
 };
 
@@ -65,5 +63,6 @@ const seek = (event) => {
 };
 
 play.addEventListener("click", onPlayClick);
+video.addEventListener("click", onPlayClick);
 stop.addEventListener("click", stopVideo);
 progress.addEventListener("input", seek);
